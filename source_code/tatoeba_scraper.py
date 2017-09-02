@@ -98,5 +98,7 @@ def generate_example_sentences(keyword_to_search_for):
         print("japanese_sentence: {}".format(japanese_sentence))
         print("english_sentence: {}".format(english_sentence))
         sentences_found.append((japanese_sentence, english_sentence))
+    return sentences_found
 
-generate_example_sentences("用語")
+if __name__ == "__main__":
+    generate_example_sentences("用語")

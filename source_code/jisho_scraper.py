@@ -66,4 +66,5 @@ def generate_jisho_definition(search_keyword):
 
     return dictionary_to_return
 
-generate_jisho_definition("用語")
+if __name__ == '__main__':
+    generate_jisho_definition("用語")
