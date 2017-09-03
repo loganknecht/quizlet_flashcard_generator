@@ -14,5 +14,5 @@ echo "REPOSITORY_ROOT_DIRECTORY: $REPOSITORY_ROOT_DIRECTORY"
 echo "DOCKER_IMAGE_TAG: $DOCKER_IMAGE_TAG"
 
 
-rm -fr "$REPOSITORY_ROOT_DIRECTORY/output_directory/*"
-echo "This file was added for git." > "$REPOSITORY_ROOT_DIRECTORY/output_directory/placeholder.txt"
+rm -fr $REPOSITORY_ROOT_DIRECTORY/output_directory/*
+echo "This file was added for git." > $REPOSITORY_ROOT_DIRECTORY/output_directory/placeholder.txt
