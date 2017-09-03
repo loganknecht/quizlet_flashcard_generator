@@ -79,7 +79,8 @@ def read_input_file(input_file_path):
     with open(input_file_path) as file:
         for line in file:
             sanitized_line = line.strip()
-            terms.append(sanitized_line)
+            if sanitized_line != "":
+                terms.append(sanitized_line)
 
     return terms
 
@@ -101,7 +102,14 @@ def serialize_flashcard_vocabulary_term_to_quizlet_format(flashcard):
     # Takes the first element because there's an assumption that it's the only
     # term returned?
     # I haven't seen multiple terms and such returned?
-    term = jisho_term["kanji"][0]
+    kanji = jisho_term["kanji"]
+    hiragana = jisho_term["hiragana"]
+    if kanji:
+        term = kanji[0]
+    elif hiragana:
+        term = hiragana[0]
+    else:
+        term = "MISSING"
 
     return term
 
@@ -130,6 +138,7 @@ def serialize_flashcard_vocabulary_definition_to_quizlet_format(flashcard):
             definition += "\n"
 
         if english_definitions:
+            definition += "•"
             definition += ", ".join(english_definitions)
             definition += "\n"
 
@@ -193,6 +202,9 @@ def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashc
     example_sentences_lines = []
 
     for flashcard in flashcards:
+        print("-" * 20)
+        print("Serializing flashcard")
+        print(flashcard)
         # serialize_flashcard_vocabulary_term_to_quizlet_format
         # serialize_flashcard_vocabulary_definition_to_quizlet_format
         # serialize_flashcard_example_sentence_term_to_quizlet_format
@@ -228,17 +240,9 @@ def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashc
         for line in vocabulary_lines:
             file.write(line)
 
-    # print(flashcard)
-    # print("// " + "-" * 77)
-    # string_to_write = ("TERM: {term}"
-    #                    "\nPRONOUNCIATION: {pronounciation}"
-    #                    "\nDEFINITION: {definition}"
-    #                    "\nPART OF SPEECH: {part_of_speech}").format(term=flashcard["kanji"],
-    #                                                                 pronounciation=flashcard["hiragana"],
-    #                                                                 definition=flashcard["english_definition"],
-    #                                                                 part_of_speech=flashcard["part_of_speech"])
-    # print(string_to_write)
-    # file.write()
+    with open(example_sentences_output_file_path, 'w') as file:
+        for line in example_sentences_lines:
+            file.write(line)
 
 
 def get_arg_parser():
