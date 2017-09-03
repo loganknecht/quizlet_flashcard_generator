@@ -101,9 +101,23 @@ def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashc
     print(output_vocabulary_filename)
     print(output_example_sentences_filename)
 
+    # kanji
+    # hiragana
+    # part_of_speech
+    # example_sentence_english
+    # example_sentence_japanese
     with open(output_vocabulary_filename, 'w') as file:
         for flashcard in flashcards:
-            pass
+            # print(flashcard)
+            print("// " + "-" * 77)
+            string_to_write = ("TERM: {term}"
+                               "\nPRONOUNCIATION: {pronounciation}"
+                               "\nDEFINITION: {definition}"
+                               "\nPART OF SPEECH: {part_of_speech}").format(term=flashcard["kanji"],
+                                                                            pronounciation=flashcard["hiragana"],
+                                                                            definition=flashcard["english_definition"],
+                                                                            part_of_speech=flashcard["part_of_speech"])
+            print(string_to_write)
             # file.write()
 
 
@@ -141,8 +155,8 @@ if __name__ == '__main__':
         print("// " + "=" * 77)
         print("\n".join(terms_for_flashcards))
 
-        # flashcards = generate_flashcards(terms_for_flashcards)
-        flashcards = []
+        flashcards = generate_flashcards(terms_for_flashcards)
+        # flashcards = []
 
         print("// " + "=" * 77)
         print("// Flashcard information")
