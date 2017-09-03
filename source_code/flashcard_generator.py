@@ -16,25 +16,29 @@ def generate_flashcard(term):
     print("// " + "=" * 77)
     print("// Generating Flash Card For 「{}」".format(term))
     print("// " + "=" * 77)
-    definition_dictionary = jisho_scraper.generate_jisho_definition(term)
+    jisho_term = jisho_scraper.generate_jisho_definition(term)
     # Default searches tatoeba for shortest, allegdly native-created, first result
     example_sentences = tatoeba_scraper.generate_example_sentences(term)
-    # TODO: Check definition_dictionary.pronounciation != "MISSING"
+
+    # TODO: Check jisho_term.pronounciation != "MISSING"
     #       if it is then use pykakasi to convert the term to be in hiragana?
     # Not sure will work  if term isn't returned as well
-    if example_sentences:
-        english_example_sentence, japanese_example_sentence = example_sentences[0]
-        definition_dictionary["example_sentence_english"] = english_example_sentence
-        definition_dictionary["example_sentence_japanese"] = japanese_example_sentence
-    else:
-        definition_dictionary["example_sentence_english"] = ("No english sentence found for {}"
-                                                             ).format(term)
-        definition_dictionary["example_sentence_japanese"] = ("No japanese sentence found for {}"
-                                                              ).format(term)
+    # if example_sentences:
+    #     english_example_sentence, japanese_example_sentence = example_sentences[0]
+    #     jisho_term["example_sentence_english"] = english_example_sentence
+    #     jisho_term["example_sentence_japanese"] = japanese_example_sentence
+    # else:
+    #     jisho_term["example_sentence_english"] = ("No english sentence found for {}"
+    #                                                          ).format(term)
+    #     jisho_term["example_sentence_japanese"] = ("No japanese sentence found for {}"
+    #                                                           ).format(term)
+    # print(jisho_term)
+    new_flashcard = {
+        "jisho_term": jisho_term,
+        "example_sentences": example_sentences,
+    }
 
-    print(definition_dictionary)
-
-    return definition_dictionary
+    return new_flashcard
 
 
 def generate_flashcards(terms):
@@ -90,6 +94,80 @@ def format_flashcard_for_quizlet(term, definition):
     return formatted_flashcard_string
 
 
+def serialize_flashcard_vocabulary_term_to_quizlet_format(flashcard):
+    jisho_term = flashcard["jisho_term"]
+    example_sentences = flashcard["example_sentences"]
+
+    # Takes the first element because there's an assumption that it's the only
+    # term returned?
+    # I haven't seen multiple terms and such returned?
+    term = jisho_term["kanji"][0]
+
+    return term
+
+
+# lol naming
+def serialize_flashcard_vocabulary_definition_to_quizlet_format(flashcard):
+    jisho_term = flashcard["jisho_term"]
+    example_sentences = flashcard["example_sentences"]
+
+    definition = ""
+
+    # Takes the first element because there's an assumption that it's the only
+    # term returned?
+    # I haven't seen multiple terms and such returned?
+    definition += "{}\n".format(jisho_term["hiragana"][0])
+
+    # Definition
+    for sense in jisho_term["definitions"]:
+        parts_of_speech = sense["parts_of_speech"]
+        english_definitions = sense["english_definitions"]
+
+        # print(parts_of_speech)
+
+        if parts_of_speech:
+            definition += ", ".join(parts_of_speech)
+            definition += "\n"
+
+        if english_definitions:
+            definition += ", ".join(english_definitions)
+            definition += "\n"
+
+    return definition
+
+
+def serialize_flashcard_example_sentence_term_to_quizlet_format(flashcard):
+    jisho_term = flashcard["jisho_term"]
+    example_sentences = flashcard["example_sentences"]
+
+    japanese_example_sentence = ""
+    english_example_sentence = ""
+
+    # Example Sentence
+    if example_sentences:
+        japanese_example_sentence, english_example_sentence = example_sentences[0]
+
+    term = japanese_example_sentence
+
+    return term
+
+
+def serialize_flashcard_example_sentence_definition_to_quizlet_format(flashcard):
+    jisho_term = flashcard["jisho_term"]
+    example_sentences = flashcard["example_sentences"]
+
+    japanese_example_sentence = ""
+    english_example_sentence = ""
+
+    # Example Sentence
+    if example_sentences:
+        japanese_example_sentence, english_example_sentence = example_sentences[0]
+
+    definition = english_example_sentence
+
+    return definition
+
+
 def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashcards):
     vocabulary_file_name_with_extension = os.path.basename(vocabulary_file_path)
     vocabulary_file_name, vocabulary_file_extension = os.path.splitext(vocabulary_file_name_with_extension)
@@ -101,24 +179,59 @@ def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashc
     print(output_vocabulary_filename)
     print(output_example_sentences_filename)
 
-    # kanji
-    # hiragana
-    # part_of_speech
-    # example_sentence_english
-    # example_sentence_japanese
+    term_and_definition_delimeter = "-"
+    card_delimeter = "\n\n"
+
+    vocabulary_lines = []
+    example_sentences_lines = []
+
+    for flashcard in flashcards:
+        # serialize_flashcard_vocabulary_term_to_quizlet_format
+        # serialize_flashcard_vocabulary_definition_to_quizlet_format
+        # serialize_flashcard_example_sentence_term_to_quizlet_format
+        # serialize_flashcard_example_sentence_definition_to_quizlet_format
+
+        vocabulary_term = serialize_flashcard_vocabulary_term_to_quizlet_format(flashcard)
+        vocabulary_definition = serialize_flashcard_vocabulary_definition_to_quizlet_format(flashcard)
+
+        new_vocabulary_line = ("{term}"
+                               "{term_and_definition_delimeter}"
+                               "{definition}"
+                               "{card_delimeter}").format(term=vocabulary_term,
+                                                          term_and_definition_delimeter=term_and_definition_delimeter,
+                                                          definition=vocabulary_definition,
+                                                          card_delimeter=card_delimeter)
+        vocabulary_lines.append(new_vocabulary_line)
+
+        example_sentence_term = serialize_flashcard_example_sentence_term_to_quizlet_format(flashcard)
+        example_sentence_definition = serialize_flashcard_example_sentence_definition_to_quizlet_format(flashcard)
+
+        example_sentence_line = ("{term}"
+                                 "{term_and_definition_delimeter}"
+                                 "{definition}"
+                                 "{card_delimeter}").format(term=example_sentence_term,
+                                                            term_and_definition_delimeter=term_and_definition_delimeter,
+                                                            definition=example_sentence_definition,
+                                                            card_delimeter=card_delimeter)
+        example_sentences_lines.append(example_sentence_line)
+
+    print("".join(vocabulary_lines))
+    # print("-" * 40)
+    # print("".join(example_sentences_lines))
+
     with open(output_vocabulary_filename, 'w') as file:
-        for flashcard in flashcards:
-            # print(flashcard)
-            print("// " + "-" * 77)
-            string_to_write = ("TERM: {term}"
-                               "\nPRONOUNCIATION: {pronounciation}"
-                               "\nDEFINITION: {definition}"
-                               "\nPART OF SPEECH: {part_of_speech}").format(term=flashcard["kanji"],
-                                                                            pronounciation=flashcard["hiragana"],
-                                                                            definition=flashcard["english_definition"],
-                                                                            part_of_speech=flashcard["part_of_speech"])
-            print(string_to_write)
-            # file.write()
+        pass
+        # print(flashcard)
+        # print("// " + "-" * 77)
+        # string_to_write = ("TERM: {term}"
+        #                    "\nPRONOUNCIATION: {pronounciation}"
+        #                    "\nDEFINITION: {definition}"
+        #                    "\nPART OF SPEECH: {part_of_speech}").format(term=flashcard["kanji"],
+        #                                                                 pronounciation=flashcard["hiragana"],
+        #                                                                 definition=flashcard["english_definition"],
+        #                                                                 part_of_speech=flashcard["part_of_speech"])
+        # print(string_to_write)
+        # file.write()
 
 
 def get_arg_parser():

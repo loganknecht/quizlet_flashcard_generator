@@ -16,7 +16,12 @@ kakasi.setMode("J", "H")  # Input: Japanese / Output: Hiragana
 hiragana_text_normalizer = kakasi.getConverter()
 
 
-def generate_jisho_definition(search_keyword):
+def request_jisho_term(search_keyword):
+    """Iterates through the jisho request and creates a list of dictionary
+    objects that contains the jisho information returned. The jisho response has
+    two categories 'japanese', 'senses'. Each of their respective indexes are
+    assumed to map.
+    """
     response = requests.get(jisho_search_endpoint,
                             data={
                                 "keyword": search_keyword,
@@ -24,69 +29,67 @@ def generate_jisho_definition(search_keyword):
     # print(response)
     response_json = response.json()
     term_list = response_json["data"]
+
+    # Jisho term is just a container class for the list of information
+    # Indexes for separate propreties are assumed to map to each other
+    jisho_terms = []
     for term in term_list:
         print("// " + "-" * 77)
         print("// Parsing definition")
         print("// " + "-" * 77)
         print(term)
-        # MINIMUM
-        # TODO: Consider changing these from singular values to lists of output
-        kanji_spelling = "MISSING"
-        hiragana_spelling = "MISSING"
 
-        english_definitions_found = []
-        english_definition_to_return = "MISSING"
+        kanji_spelling_found = []
+        hiragana_spelling_found = []
+        definitions_found = []
 
-        parts_of_speech_found = []
-        part_of_speech_to_return = "MISSING"
+        # Traverses the response for Japanese
+        # contains the term
+        # contains the pronounciation
+        for japanese_word in term["japanese"]:
+            # Kanji - should be a single value getting appended
+            if "word" in japanese_word:
+                kanji_spelling_found.append(japanese_word["word"])
+            # Hiragana - should be a single value getting appended
+            if "reading" in japanese_word:
+                hiragana_spelling_found.append(japanese_word["reading"])
+            else:
+                hiragana_spelling_found = hiragana_text_normalizer.do(japanese_word["word"])
 
-        # Traverses the response for Japanese, which contains the term and its
-        # pronounciation
-        japanese_list = term["japanese"]
-        japanese_word = japanese_list[0]
-
-        # Traverses the response for  Senses, which contains the part of speech
+        # Traverses the response for  Senses
+        # contains the part of speech
+        # contains the english definitions
         senses_list = term["senses"]
 
-        if(japanese_word is not None and
-                japanese_word != ""):
-            print(japanese_word)
-            # Kanji
-            if "word" in japanese_word:
-                kanji_spelling = japanese_word["word"]
-            # Hiragana
-            if "reading" in japanese_word:
-                hiragana_spelling = japanese_word["reading"]
-            else:
-                hiragana_spelling = hiragana_text_normalizer.do(search_keyword)
-
         for sense in senses_list:
-            # English Definition
-            english_definitions = sense["english_definitions"]
-            for english_definition in english_definitions:
-                english_definitions_found.append(english_definition)
+            # English Definition - should be a list getting appended?
+            definitions_found.append(sense)
 
-            # Part of Speech
-            parts_of_speech = sense["parts_of_speech"]
-            for part_of_speech in parts_of_speech:
-                parts_of_speech_found.append(part_of_speech)
+        print("English definitions: {}".format(definitions_found))
+        print("Hiragana: {}".format(hiragana_spelling_found))
+        print("Kanji: {}".format(kanji_spelling_found))
 
-        english_definitions_to_return = ", ".join(english_definitions_found)
-        part_of_speech_to_return = ", ".join(parts_of_speech_found)
+        new_jisho_term = {
+            "definitions": definitions_found,
+            "hiragana": hiragana_spelling_found,
+            "kanji": kanji_spelling_found,
+        }
+        jisho_terms.append(new_jisho_term)
 
-        print("Kanji: {}".format(kanji_spelling))
-        print("Hiragana: {}".format(hiragana_spelling))
-        print("Part of speech: {}".format(part_of_speech))
-        print("English definitions: {}".format(english_definitions))
+    return jisho_terms
 
-    dictionary_to_return = {
-        "english_definition": english_definitions_to_return,
-        "kanji": kanji_spelling,
-        "hiragana": hiragana_spelling,
-        "part_of_speech": part_of_speech_to_return,
-    }
 
-    return dictionary_to_return
+def generate_jisho_definition(search_keyword):
+    jisho_terms = request_jisho_term(search_keyword)
+
+    # Ok, at this point jisho has returned a bunch of stuff from the search right?
+    # Right.
+    # So, because we're relying on jisho to do the hard work of finding the most
+    # relevant search for the term we're going to take the top item returned
+
+    definition_to_return = jisho_terms[0]
+
+    return definition_to_return
 
 if __name__ == '__main__':
     generate_jisho_definition("用語")
