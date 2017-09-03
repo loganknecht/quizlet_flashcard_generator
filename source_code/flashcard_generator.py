@@ -123,10 +123,10 @@ def serialize_flashcard_vocabulary_definition_to_quizlet_format(flashcard):
         parts_of_speech = sense["parts_of_speech"]
         english_definitions = sense["english_definitions"]
 
-        # print(parts_of_speech)
-
         if parts_of_speech:
+            definition += "~"
             definition += ", ".join(parts_of_speech)
+            definition += "~"
             definition += "\n"
 
         if english_definitions:
@@ -176,10 +176,17 @@ def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashc
 
     output_vocabulary_filename = (vocabulary_file_name + ".txt")
     output_example_sentences_filename = (vocabulary_file_name + "例文.txt")
+
+    vocabulary_output_file_path = os.path.join(output_directory_path,
+                                               output_vocabulary_filename)
+    example_sentences_output_file_path = os.path.join(output_directory_path,
+                                                      output_example_sentences_filename)
     print(output_vocabulary_filename)
     print(output_example_sentences_filename)
+    print(vocabulary_output_file_path)
+    print(example_sentences_output_file_path)
 
-    term_and_definition_delimeter = "-"
+    term_and_definition_delimeter = "=="
     card_delimeter = "\n\n"
 
     vocabulary_lines = []
@@ -193,7 +200,6 @@ def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashc
 
         vocabulary_term = serialize_flashcard_vocabulary_term_to_quizlet_format(flashcard)
         vocabulary_definition = serialize_flashcard_vocabulary_definition_to_quizlet_format(flashcard)
-
         new_vocabulary_line = ("{term}"
                                "{term_and_definition_delimeter}"
                                "{definition}"
@@ -205,7 +211,6 @@ def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashc
 
         example_sentence_term = serialize_flashcard_example_sentence_term_to_quizlet_format(flashcard)
         example_sentence_definition = serialize_flashcard_example_sentence_definition_to_quizlet_format(flashcard)
-
         example_sentence_line = ("{term}"
                                  "{term_and_definition_delimeter}"
                                  "{definition}"
@@ -216,22 +221,24 @@ def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashc
         example_sentences_lines.append(example_sentence_line)
 
     print("".join(vocabulary_lines))
-    # print("-" * 40)
-    # print("".join(example_sentences_lines))
+    print("-" * 40)
+    print("".join(example_sentences_lines))
 
-    with open(output_vocabulary_filename, 'w') as file:
-        pass
-        # print(flashcard)
-        # print("// " + "-" * 77)
-        # string_to_write = ("TERM: {term}"
-        #                    "\nPRONOUNCIATION: {pronounciation}"
-        #                    "\nDEFINITION: {definition}"
-        #                    "\nPART OF SPEECH: {part_of_speech}").format(term=flashcard["kanji"],
-        #                                                                 pronounciation=flashcard["hiragana"],
-        #                                                                 definition=flashcard["english_definition"],
-        #                                                                 part_of_speech=flashcard["part_of_speech"])
-        # print(string_to_write)
-        # file.write()
+    with open(vocabulary_output_file_path, 'w') as file:
+        for line in vocabulary_lines:
+            file.write(line)
+
+    # print(flashcard)
+    # print("// " + "-" * 77)
+    # string_to_write = ("TERM: {term}"
+    #                    "\nPRONOUNCIATION: {pronounciation}"
+    #                    "\nDEFINITION: {definition}"
+    #                    "\nPART OF SPEECH: {part_of_speech}").format(term=flashcard["kanji"],
+    #                                                                 pronounciation=flashcard["hiragana"],
+    #                                                                 definition=flashcard["english_definition"],
+    #                                                                 part_of_speech=flashcard["part_of_speech"])
+    # print(string_to_write)
+    # file.write()
 
 
 def get_arg_parser():
