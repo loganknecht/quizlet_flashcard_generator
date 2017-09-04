@@ -20,19 +20,9 @@ def generate_flashcard(term):
     # Default searches tatoeba for shortest, allegdly native-created, first result
     example_sentences = tatoeba_scraper.generate_example_sentences(term)
 
-    # TODO: Check jisho_term.pronounciation != "MISSING"
-    #       if it is then use pykakasi to convert the term to be in hiragana?
-    # Not sure will work  if term isn't returned as well
-    # if example_sentences:
-    #     english_example_sentence, japanese_example_sentence = example_sentences[0]
-    #     jisho_term["example_sentence_english"] = english_example_sentence
-    #     jisho_term["example_sentence_japanese"] = japanese_example_sentence
-    # else:
-    #     jisho_term["example_sentence_english"] = ("No english sentence found for {}"
-    #                                                          ).format(term)
-    #     jisho_term["example_sentence_japanese"] = ("No japanese sentence found for {}"
-    #                                                           ).format(term)
-    # print(jisho_term)
+    # Neither of these are guaranteed to be returning anything
+    # Either could be None
+
     new_flashcard = {
         "jisho_term": jisho_term,
         "example_sentences": example_sentences,
@@ -45,7 +35,10 @@ def generate_flashcards(terms):
     flash_cards_to_return = []
 
     for term in terms:
-        flash_cards_to_return.append(generate_flashcard(term))
+        new_flashcard = generate_flashcard(term)
+        if(new_flashcard["jisho_term"] is not None and
+                new_flashcard["example_sentences"] is not None):
+            flash_cards_to_return.append(new_flashcard)
 
     return flash_cards_to_return
 
@@ -132,9 +125,9 @@ def serialize_flashcard_vocabulary_definition_to_quizlet_format(flashcard):
         english_definitions = sense["english_definitions"]
 
         if parts_of_speech:
-            definition += "~"
+            definition += "〜"
             definition += ", ".join(parts_of_speech)
-            definition += "~"
+            definition += "〜"
             definition += "\n"
 
         if english_definitions:

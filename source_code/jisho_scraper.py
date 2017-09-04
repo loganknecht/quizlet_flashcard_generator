@@ -87,7 +87,10 @@ def generate_jisho_definition(search_keyword):
     # So, because we're relying on jisho to do the hard work of finding the most
     # relevant search for the term we're going to take the top item returned
 
-    definition_to_return = jisho_terms[0]
+    if jisho_terms:
+        definition_to_return = jisho_terms[0]
+    else:
+        return None
 
     return definition_to_return
 
