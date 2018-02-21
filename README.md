@@ -8,7 +8,17 @@
 - Install dependencies
     - You'll want everything, so use the dev dependencies
     - `pip install -r source/requirements.txt`
+- Install pykakasi
 
 # Running
-- `sh ./build/build.sh
-- `sh ./deploy/deploy.sh
+- `python source_code/flashcard_generator.py --help`
+
+- Generate flashcards
+```
+python source_code/flashcard_generator.py \
+    --i ./input_directory/私立先生 \
+    --o ./output_directory/
+```
+
+- The output will have the `\n\n` used as a delimter for the card contents
+- The output will have the `==` used as a delimter for the term on the left and the definition on the right
