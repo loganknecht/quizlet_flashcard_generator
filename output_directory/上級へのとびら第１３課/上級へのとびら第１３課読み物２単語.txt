@@ -1,0 +1,336 @@
+詩==し
+〜Noun〜
+•poem, verse of poetry
+〜Wikipedia definition〜
+•Poetry
+
+
+鑑賞==かんしょう
+〜Noun, Suru verb〜
+•appreciation (of art, music, poetry, etc.)
+
+
+蝉==せみ
+〜Noun〜
+•cicada, locust
+•small-sized pulley
+〜Wikipedia definition〜
+•Cicada
+
+
+ホームレス==ホームレス
+〜No-adjective〜
+•homeless
+〜Noun〜
+•homeless person
+〜Wikipedia definition〜
+•Homelessness
+
+
+昼寝==ひるね
+〜Noun, Suru verb〜
+•nap (afternoon), siesta
+〜Place〜
+•Hirune
+〜Wikipedia definition〜
+•Nap
+
+
+情景==じょうけい
+〜Noun〜
+•spectacle, sight, scene
+
+
+浮かぶ==うかぶ
+〜Godan verb with bu ending〜
+•to float, to be suspended
+•to rise to surface
+•to come to mind, to have inspiration
+
+
+詠む==よむ
+〜Godan verb with mu ending, Transitive verb〜
+•to compose (a Japanese poem), to write, to use as the theme of a poem
+•to recite (e.g. a poem), to chant, to intone
+
+
+規則==きそく
+〜Noun〜
+•rule, regulation
+
+
+法度==はっと
+〜Noun〜
+•law, ban, prohibition, ordinance
+
+
+感動==かんどう
+〜Noun, Suru verb〜
+•being deeply moved emotionally, excitement, passion, inspiration, deep emotion, strong impression
+
+
+発見==はっけん
+〜Noun, Suru verb〜
+•discovery, detection, finding
+〜Wikipedia definition〜
+•Discovery (observation)
+
+
+想像==そうぞう
+〜Noun, Suru verb, No-adjective〜
+•imagination, guess
+
+
+季語==きご
+〜Noun〜
+•seasonal word (in haiku)
+〜Wikipedia definition〜
+•Kigo
+
+
+季節感==きせつかん
+〜Noun〜
+•a sense of the seasons
+
+
+組み立て==くみたて
+〜Noun, No-adjective〜
+•construction, framework, erection, assembly, organization, organisation
+
+
+要素==ようそ
+〜Noun〜
+•component, factor, item (e.g. in list)
+•element (e.g. in array), member (e.g. data structure)
+
+
+必ず==かならず
+〜Adverb〜
+•always, without exception, necessarily, certainly, without fail, positively, invariably
+
+
+分類==ぶんるい
+〜Noun, Suru verb〜
+•classification, categorization, sorting
+
+
+括弧==かっこ
+〜Noun, Suru verb, No-adjective〜
+•parentheses, brackets
+〜Wikipedia definition〜
+•Bracket
+
+
+直接==ちょくせつ
+〜Na-adjective, Adverbial noun, No-adjective〜
+•direct, immediate, personal, firsthand
+
+
+示す==しめす
+〜Godan verb with su ending, Transitive verb〜
+•to (take out and) show, to demonstrate, to tell, to exemplify, to make apparent
+•to point out (finger, clock hand, needle, etc.)
+•to indicate, to show, to represent, to signify, to display
+
+
+宵==よい
+〜Noun〜
+•evening, early night hours
+
+
+現象==げんしょう
+〜Noun〜
+•phenomenon
+〜Wikipedia definition〜
+•Phenomenon
+
+
+枯れ野==かれの
+〜Noun〜
+•desolate field, withered field
+
+
+五月晴れ==さつきばれ
+〜Noun〜
+•early-summer fine weather (during rainy season)
+
+
+赤とんぼ==あかとんぼ
+〜Noun〜
+•(small) red dragonfly
+•darter (dragonfly of genus Sympetrum, esp. the autumn darter, Sympetrum frequens)
+〜Wikipedia definition〜
+•Sympetrum
+
+
+木の芽==きのめ
+〜Noun〜
+•leaf bud
+•bud of Japanese pepper tree (Xanthoxylum piperitum)
+
+
+紅葉==こうよう
+〜Noun, Suru verb〜
+•autumn colours, fall colors, leaves changing color (colour)
+•leaves turning red, red leaves
+•leaves turning yellow, yellow leaves
+〜Noun〜
+•(Japanese) maple (Acer japonicum)
+•venison
+•layered colors in garments, resembling autumn colors
+〜Wikipedia definition〜
+•Autumn leaf color
+
+
+田植え==たうえ
+〜Noun〜
+•rice planting
+
+
+鯉のぼり==こいのぼり
+〜Noun〜
+•carp streamer, carp banner
+
+
+構成==こうせい
+〜Noun, Suru verb, No-adjective〜
+•organization, organisation, configuration, composition
+
+
+語調==ごちょう
+〜Noun〜
+•tone (of voice), parlance, style
+•intonation, accent
+
+
+短歌==たんか
+〜Noun〜
+•tanka, 31-mora Japanese poem
+
+
+諺==ことわざ
+〜Noun〜
+•proverb, saying, aphorism, maxim
+
+
+歌詞==かし
+〜Noun〜
+•song lyrics, words of a song, libretto
+〜Wikipedia definition〜
+•Lyrics
+
+
+標語==ひょうご
+〜Noun〜
+•motto, slogan, catchword
+〜Wikipedia definition〜
+•Motto
+
+
+池==いけ
+〜Noun〜
+•pond
+〜Wikipedia definition〜
+•Pond
+
+
+蛙==かえる
+〜Noun〜
+•frog
+•kajika frog (Buergeria buergeri)
+〜Wikipedia definition〜
+•Frog
+
+
+溶ける==とける
+〜Ichidan verb, intransitive verb〜
+•to melt, to thaw, to fuse, to dissolve
+
+
+俳人==はいじん
+〜Noun〜
+•haiku poet
+
+
+親しむ==したしむ
+〜Godan verb with mu ending, intransitive verb〜
+•to be intimate with, to befriend
+
+
+句==く
+〜Noun, Noun - used as a suffix〜
+•section (i.e. of text), sentence, passage, paragraph
+•phrase
+•verse (of 5 or 7 mora in Japanese poetry; of 4, 5, or 7 characters in Chinese poetry)
+•haiku, first 17 morae of a renga, etc.
+•maxim, saying, idiom, expression
+〜Wikipedia definition〜
+•Phrase
+
+
+暗唱==あんしょう
+〜Noun, Suru verb〜
+•recitation, reciting from memory
+
+
+侘び寂び==わびさび
+〜Noun〜
+•aesthetic sense in Japanese art emphasising quiet simplicity and subdued refinement
+
+
+芸術性==げいじゅつせい
+〜Noun〜
+•artistry, artistic quality, artistic character
+
+
+誕生==たんじょう
+〜Noun, Suru verb〜
+•birth, creation, formation
+〜Wikipedia definition〜
+•Birth
+
+
+解釈==かいしゃく
+〜Noun, Suru verb〜
+•explanation, interpretation
+
+
+本来==ほんらい
+〜Adverbial noun, Temporal noun, No-adjective〜
+•originally, primarily
+•essentially, naturally, by nature, in (and of) itself
+•proper, legal
+
+
+作者==さくしゃ
+〜Noun〜
+•author, authoress, writer, composer, artist
+
+
+意図==いと
+〜Noun, Suru verb〜
+•intention, aim, design
+
+
+物事==ものごと
+〜Noun〜
+•things, everything
+
+
+参考==さんこう
+〜Noun, No-adjective〜
+•reference, consultation
+
+
+老若男女==ろうにゃくなんにょ
+〜Noun〜
+•men and women of all ages
+
+
+味わう==あじわう
+〜Godan verb with u ending, Transitive verb〜
+•to taste, to savor, to savour, to relish
+•to appreciate, to enjoy, to relish, to digest
+•to experience, to go through, to taste (e.g. victory), to know (e.g. pain)
+
+
