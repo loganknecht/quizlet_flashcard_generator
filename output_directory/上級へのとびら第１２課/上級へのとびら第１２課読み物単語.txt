@@ -1,0 +1,304 @@
+伝統工芸==でんとうこうげい
+〜Noun〜
+•traditional craft, traditional handicrafts
+
+
+和紙==わし
+〜Noun〜
+•washi, Japanese paper
+〜Wikipedia definition〜
+•Washi
+
+
+和室==わしつ
+〜Noun〜
+•Japanese-style room
+〜Wikipedia definition〜
+•Washitsu
+
+
+畳==たたみ
+〜Noun〜
+•tatami mat, Japanese straw floor coverings
+
+
+和服==わふく
+〜Noun〜
+•Japanese clothes
+〜Wikipedia definition〜
+•Kimono
+
+
+紀元前==きげんぜん
+〜Adverbial noun, Temporal noun〜
+•pre-era, BC, BCE
+〜Wikipedia definition〜
+•Ante Christum Natum
+
+
+植物==しょくぶつ
+〜Noun〜
+•plant, vegetation
+〜Wikipedia definition〜
+•Plant
+
+
+原料==げんりょう
+〜Noun〜
+•raw materials
+
+
+流し==ながし
+〜Noun〜
+•sink (e.g. kitchen)
+〜No-adjective, Noun〜
+•cruising (e.g. taxi), strolling (entertainer, musician, etc.)
+〜Noun〜
+•washing area in a Japanese-style bath
+•back-washing service (in a public bath)
+•floating (something on water), setting adrift, washing away
+
+
+特長==とくちょう
+〜Noun〜
+•forte, merit
+
+
+薄い==うすい
+〜I-adjective〜
+•thin
+•pale, light, faint
+•watery, thin, dilute
+•weak (taste, etc.), little (affection, etc.) not much (of a presence)
+•slim (probability, etc.), small
+•sparse, patchy, scattered
+
+
+商人==しょうにん
+〜Noun〜
+•merchant, trader, tradesman, dealer, shopkeeper
+〜Place〜
+•Akindo
+〜Wikipedia definition〜
+•Merchant
+
+
+火事==かじ
+〜Noun〜
+•fire, conflagration
+
+
+帳簿==ちょうぼ
+〜Noun〜
+•account book, register, ledger
+
+
+井戸==いど
+〜Noun〜
+•water well
+〜Wikipedia definition〜
+•Water well
+
+
+隠す==かくす
+〜Godan verb with su ending, Transitive verb〜
+•to hide, to conceal
+
+
+乾かす==かわかす
+〜Godan verb with su ending, Transitive verb〜
+•to dry (clothes, etc.), to desiccate
+
+
+濡れる==ぬれる
+〜Ichidan verb, intransitive verb〜
+•to get wet
+
+
+割れる==われる
+〜Ichidan verb, intransitive verb〜
+•to break, to be smashed
+•to split, to crack, to fissure, to be torn
+•to be divided (opinion, vote, etc.), to split (e.g. of a party)
+•to come to light, to become clear, to be identified, to be revealed
+•to be distorted (of a sound)
+•to be divisible (without a remainder)
+•to go below a minimum
+
+
+柔らかい==やわらかい
+〜I-adjective〜
+•soft, tender, pliant, supple, limber, limp
+•gentle, mild, mellow
+•informal, light, flexible (e.g. thinking)
+
+
+籠==かご
+〜Noun〜
+•basket (shopping, etc.), hamper, cage
+〜Wikipedia definition〜
+•Basket
+
+
+箪笥==たんす
+〜Noun〜
+•chest of drawers, bureau, cabinet, tansu, dresser
+〜Place〜
+•Tansu
+
+
+家具==かぐ
+〜Noun〜
+•furniture
+〜Wikipedia definition〜
+•Furniture
+
+
+竹==たけ
+〜Noun〜
+•bamboo (any grass of subfamily Bambusoideae)
+•middle (of a three-tier ranking system)
+〜Wikipedia definition〜
+•Bamboo
+
+
+丈夫==じょうぶ
+〜Na-adjective〜
+•healthy, robust, strong, solid, durable
+
+
+手触り==てざわり
+〜Noun〜
+•feel, touch
+
+
+通す==とおす
+〜Godan verb with su ending, Transitive verb〜
+•to stick through, to force through
+•to spread throughout, to thoroughly diffuse
+•to make a path between two points
+•to proceed in a logical manner
+•to let pass, to allow through
+•to lead (someone) into (a house, room, etc.), to show in
+•to go through (a middleman)
+•to (look, listen) through (a window, wall, etc.)
+•to pass (a law, applicant, etc.)
+•to force to accept, to force agreement
+•to continue (in a state), to persist in
+•to do to the entirety of, to cover all of, to span the whole ...
+•to do from beginning to end without a break
+•to convey (one's ideas, etc.) to the other party
+•to do to the end, to carry through, to complete
+
+
+光==ひかり
+〜Noun〜
+•light
+•illumination, ray, beam, gleam, glow
+•happiness, hope
+•influence, power
+•vision, eyesight
+〜Wikipedia definition〜
+•Light
+
+
+優しい==やさしい
+〜I-adjective〜
+•tender, kind, gentle, graceful, affectionate, amiable
+
+
+障子==しょうじ
+〜Noun〜
+•shoji (paper sliding door)
+〜Wikipedia definition〜
+•Shōji
+
+
+閉じる==とじる
+〜Ichidan verb, Transitive verb, intransitive verb〜
+•to close (e.g. book, eyes, meeting, etc.), to shut
+
+
+扇子==せんす
+〜Noun〜
+•folding fan
+〜Wikipedia definition〜
+•Hand fan
+
+
+多様==たよう
+〜Na-adjective, No-adjective〜
+•diverse, varied
+
+
+開発==かいはつ
+〜Noun, No-adjective, Suru verb〜
+•development, exploitation
+
+
+技術者==ぎじゅつしゃ
+〜Noun〜
+•engineer, technical expert, technician, craftsperson
+〜Wikipedia definition〜
+•Engineer
+
+
+更に==さらに
+〜Adverb, Conjunction〜
+•furthermore, again, after all, more and more, moreover, even more
+
+
+改良==かいりょう
+〜Noun, Suru verb〜
+•improvement, reform
+
+
+電解==でんかい
+〜Na-adjective, Noun, Suru verb〜
+•electrolysis, electrolytic
+
+
+不可欠==ふかけつ
+〜Na-adjective, Noun〜
+•indispensable, essential
+
+
+製品==せいひん
+〜Noun〜
+•manufactured goods, finished goods, product
+
+
+仲良く==なかよく
+〜Adverb〜
+•on good terms with, on cordial terms with, getting along well with, happily, peacefully
+〜Suru verb〜
+•to make friends with, to be good friends with, to get along with
+
+
+上手い==うまい
+〜I-adjective〜
+•skillful, skilful, clever, expert, wise, successful
+•delicious, appetizing, appetising, tasty
+•fortunate, splendid, promising
+
+
+混ざる==まざる
+〜Godan verb with ru ending, intransitive verb〜
+•to be mixed, to be blended with, to associate with, to mingle with, to join
+
+
+特有==とくゆう
+〜Na-adjective, Noun, No-adjective〜
+•characteristic (of), peculiar (to)
+
+
+生まれ変わる==うまれかわる
+〜Godan verb with ru ending〜
+•to be born again, to make a fresh start in life
+
+
+調和==ちょうわ
+〜Noun, Suru verb, No-adjective〜
+•harmony, accord, reconciliation, agreement
+
+
