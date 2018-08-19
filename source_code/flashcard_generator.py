@@ -171,6 +171,13 @@ def serialize_flashcard_example_sentence_definition_to_quizlet_format(flashcard)
 
 
 def write_vocabulary_to_file(vocabulary_file_path, output_directory_path, flashcards):
+    print("=" * 80)
+    print("WRITING OUTPUT TO FILE")
+    print("=" * 80)
+    print("VOCAB FILE: {}".format(vocabulary_file_path))
+    print("OUTPUT DIRECTORY: {}".format(output_directory_path))
+    print("FLASHCARDS: {}".format(flashcards))
+
     vocabulary_file_name_with_extension = os.path.basename(vocabulary_file_path)
     vocabulary_file_name, vocabulary_file_extension = os.path.splitext(vocabulary_file_name_with_extension)
     print(vocabulary_file_name)
@@ -273,7 +280,6 @@ if __name__ == '__main__':
         print("\n".join(terms_for_flashcards))
 
         flashcards = generate_flashcards(terms_for_flashcards)
-        # flashcards = []
 
         print("// " + "=" * 77)
         print("// Flashcard information")

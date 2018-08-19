@@ -23,7 +23,7 @@ def request_jisho_term(search_keyword):
     assumed to map.
     """
     response = requests.get(jisho_search_endpoint,
-                            data={
+                            params={
                                 "keyword": search_keyword,
                             })
     # print(response)
