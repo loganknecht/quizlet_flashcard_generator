@@ -14,13 +14,15 @@ Used to simplify and create a comprehension method for flashcard Japanese flash 
 - Install pykakasi
 
 # Running
+You **MUST** make sure that the `output_directory` specified exists
+
 - `python source_code/flashcard_generator.py --help`
 
 - Generate flashcards
 ```
 python source_code/flashcard_generator.py \
     --i ./input_directory/私立先生 \
-    --o ./output_directory/
+    --o ./output_directory/私立先生
 ```
 
 - The output will have the `\n\n` used as a delimter for the card contents
