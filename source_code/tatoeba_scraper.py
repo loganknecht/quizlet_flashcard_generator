@@ -9,7 +9,6 @@ import requests
 # Custom Libraries
 import version
 
-
 parser = html.parser.HTMLParser()
 
 
@@ -43,20 +42,23 @@ def generate_example_sentences(keyword_to_search_for):
     # trans_user=
     # unapproved=no
     # user=
-    response = requests.get(endpoint,
-                            params={
-                                "from": language_from,
-                                "native": "yes",
-                                "orphans": "no",
-                                "query": keyword_to_search_for,
-                                "sort": "words",
-                                "to": language_to,
-                                "trans_to": "eng",
-                                "unapproved": "no",
-                            })
+    response = requests.get(
+        endpoint,
+        params={
+            "from": language_from,
+            "native": "yes",
+            "orphans": "no",
+            "query": keyword_to_search_for,
+            "sort": "words",
+            "to": language_to,
+            "trans_to": "eng",
+            "unapproved": "no",
+        }
+    )
     soup = BeautifulSoup(response.text, "html.parser")
-    sentences_and_translations = soup.findAll("div",
-                                              {"class": "sentence-and-translations"})
+    sentences_and_translations = soup.findAll(
+        "div", {"class": "sentence-and-translations"}
+    )
 
     # list of tuples, where first index is japanese sentence, second index is
     # english sentence [(source, translation), ...]
@@ -68,29 +70,23 @@ def generate_example_sentences(keyword_to_search_for):
         english_sentence = "MISSING"
 
         # Japanese sentence selection
-        sentence_elements = sentence_and_translation.findAll("div",
-                                                             {
-                                                                 "class": "sentence"
-                                                             })
+        sentence_elements = sentence_and_translation.findAll(
+            "div", {"class": "sentence"}
+        )
         for sentence_element in sentence_elements:
-            text_elements = sentence_element.findAll("div",
-                                                     {
-                                                         "class": "text"
-                                                     })
+            text_elements = sentence_element.findAll("div", {"class": "text"})
             # Should really be only one element
             for text_element in text_elements:
-                japanese_sentence = text_element.string.strip()
+                japanese_sentence = text_element.text.strip()
 
         # English sentence selection
-        translation_elements = sentence_and_translation.findAll("div",
-                                                                {
-                                                                    "class": "translation"
-                                                                })
+        translation_elements = sentence_and_translation.findAll(
+            "div", {"class": "translation"}
+        )
         for translation_element in translation_elements:
-            text_elements = translation_element.findAll("div",
-                                                        {
-                                                            "class": "text"
-                                                        })
+            text_elements = translation_element.findAll(
+                "div", {"class": "text"}
+            )
             # Should really be only one element
             for text_element in text_elements:
                 english_sentence = text_element.string.strip()
@@ -99,6 +95,7 @@ def generate_example_sentences(keyword_to_search_for):
         print("english_sentence: {}".format(english_sentence))
         sentences_found.append((japanese_sentence, english_sentence))
     return sentences_found
+
 
 if __name__ == "__main__":
     generate_example_sentences("用語")
