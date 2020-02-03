@@ -17,8 +17,11 @@ def generate_flashcard(term):
     print("// Generating Flash Card For 「{}」".format(term))
     print("// " + "=" * 77)
     jisho_term = jisho_scraper.generate_jisho_definition(term)
+    # WARNING: Sentence generation is broken now, only definition cards can be
+    #           generated
     # Default searches tatoeba for shortest, allegdly native-created, first result
-    example_sentences = tatoeba_scraper.generate_example_sentences(term)
+    # example_sentences = tatoeba_scraper.generate_example_sentences(term)
+    example_sentences = None
 
     # Neither of these are guaranteed to be returning anything
     # Either could be None
@@ -36,8 +39,9 @@ def generate_flashcards(terms):
 
     for term in terms:
         new_flashcard = generate_flashcard(term)
-        if(new_flashcard["jisho_term"] is not None and
-                new_flashcard["example_sentences"] is not None):
+        if(new_flashcard["jisho_term"] is not None):
+            # TODO: Add this back
+                # new_flashcard["example_sentences"] is not None):
             flash_cards_to_return.append(new_flashcard)
 
     return flash_cards_to_return
@@ -260,6 +264,7 @@ def get_arg_parser():
                         type=str,
                         help="The directory to output the flash cards formatted for quizlet")
     return parser
+
 
 if __name__ == '__main__':
     arg_parser = get_arg_parser()
